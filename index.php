@@ -1,5 +1,5 @@
 <?php 
 
-include 'src/test.php';
+include 'src/Bootstrap.php';
 
 $test->execute();

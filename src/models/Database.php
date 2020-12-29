@@ -21,8 +21,8 @@ class Database
         $capsule->bootEloquent();
     }
 
-    static function connect()
+    static function connect(): Database
     {
-        return new Database;
+        return new self;
     }
 }
