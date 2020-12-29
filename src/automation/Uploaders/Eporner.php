@@ -14,13 +14,24 @@ class Eporner extends Automatic
     public function __construct()
     {
         parent::__construct();
+
+        /**
+         * Website 
+         */
         $this->setUrl('https://www.eporner.com/');
+
+        /**
+         * Website user credentials
+         */
         $this->setUsername('testerinokka');
         $this->setPassword('password123');
     }
 
     public function execute()
     {
+        /**
+         * Form data to upload 
+         */
         $item = new ItemController;
         $item = json_decode($item->getAll());
         $item->username = $this->getUsername();
@@ -35,6 +46,10 @@ class Eporner extends Automatic
         //use tags and categories for input, bigger chance of finding video later.
         $catags = array_unique(array_merge($tags, $categories), SORT_STRING);
 
+
+        /**
+         * ACTION
+         */
         if ($item) {
             try {
                 $this->driver->get($this->getUrl() . "login/");
