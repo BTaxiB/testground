@@ -1,0 +1,23 @@
+{
+    "name": "miljan/admin",
+    "description": "Admin",
+    "require": {
+        "php-webdriver/webdriver": "^1.8",
+        "illuminate/database": "5.1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Controllers\\": "src/controllers/",
+            "App\\Models\\": "src/models/",
+            "App\\Automation\\": "src/automation/"
+        }
+    },
+    "license": "Admin",
+    "authors": [
+        {
+            "name": "admin",
+            "email": "admin@admin.com"
+        }
+    ]
+}
