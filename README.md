@@ -1,2 +1,14 @@
 # testground
 Strictly for educational purposes!
+
+# Database configuration 
+ - Create Database and insert itemitem.sql
+ - Find constants file in /src folder and change ur credentials.
+ - It's using Eloquent ORM Capsule for database control
+
+# Selenium WebDriver
+- Run selenium.bat
+
+# How to start Automation
+- Attach script to Bootstrap.php
+- php ./src/Bootstrap.php
