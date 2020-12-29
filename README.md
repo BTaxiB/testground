@@ -11,6 +11,7 @@ Strictly for educational purposes!
  - It's using Eloquent ORM Capsule for database control
 
 # Selenium WebDriver
+- download selenium-server-standalone-3.7.1 and put it testground folder
 - Run selenium.bat
 
 # How to start Automation
