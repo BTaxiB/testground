@@ -1,6 +1,10 @@
 # testground
 Strictly for educational purposes!
 
+# Install Composer dependencies
+ - composer i
+ - composer dumpautoload -o
+ 
 # Database configuration 
  - Create Database and insert itemitem.sql
  - Find constants file in /src folder and change ur credentials.
