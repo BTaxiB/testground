@@ -16,4 +16,4 @@ Strictly for educational purposes!
 
 # How to start Automation
 - Attach script to Bootstrap.php
-- php ./src/Bootstrap.php
+- Run php ./src/Bootstrap.php
