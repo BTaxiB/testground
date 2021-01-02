@@ -14,9 +14,9 @@ ini_set("error_reporting", E_ALL);
 
 date_default_timezone_set('Europe/London');
 
-use App\Automation\Uploaders\Eporner;
+use App\Automation\Uploaders\;
 
-$test = new Eporner;
+$test = new ;
 
 $test->execute();
 
