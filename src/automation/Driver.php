@@ -16,7 +16,7 @@ class Driver
 
     public function __construct()
     {
-        return $this->chromeDriver();
+        $this->chromeDriver();
     }
 
     public static function connectDB()

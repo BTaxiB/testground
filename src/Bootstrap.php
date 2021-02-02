@@ -14,9 +14,9 @@ ini_set("error_reporting", E_ALL);
 
 date_default_timezone_set('Europe/London');
 
-use App\Automation\Uploaders\;
+use App\Automation\Test\TestAuto;
 
-$test = new ;
+$test = new TestAuto;
 
 $test->execute();
 
