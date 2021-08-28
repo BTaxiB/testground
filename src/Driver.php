@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Automation;
+namespace App;
 
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
@@ -10,13 +10,11 @@ use App\Models\Database;
 final class Driver
 {
     const HOST = 'http://localhost:4444/wd/hub';
-    protected RemoteWebDriver $chromeDriver;
-    protected Database $database;
+    public RemoteWebDriver $chromeDriver;
 
-    public function __construct(Database $database)
+    public function __construct()
     {
         $this->chromeDriver = $this->chromeDriver();
-        $this->database = $database;
     }
 
     protected function chromeDriver()
