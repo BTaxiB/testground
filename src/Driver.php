@@ -7,21 +7,16 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use App\Models\Database;
 
-/**
- * Selenium Chrome Driver
- */
-class Driver
+final class Driver
 {
     const HOST = 'http://localhost:4444/wd/hub';
+    protected RemoteWebDriver $chromeDriver;
+    protected Database $database;
 
-    public function __construct()
+    public function __construct(Database $database)
     {
-        $this->chromeDriver();
-    }
-
-    public static function connectDB()
-    {
-        return Database::connect();
+        $this->chromeDriver = $this->chromeDriver();
+        $this->database = $database;
     }
 
     protected function chromeDriver()
@@ -42,6 +37,6 @@ class Driver
         $capabilities->setCapability('-enablePassThrough', 'false');
         $capabilities->setCapability(ChromeOptions::CAPABILITY, $options);
 
-        $this->driver = RemoteWebDriver::create(self::HOST, $capabilities);
+        return RemoteWebDriver::create(self::HOST, $capabilities);
     }
 }
