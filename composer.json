@@ -8,9 +8,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "App\\Controllers\\": "src/controllers/",
-            "App\\Models\\": "src/models/",
-            "App\\Automation\\": "src/automation/"
+            "App\\Controllers\\": "src/Controllers/",
+            "App\\Database\\": "src/Database/",
+            "App\\Scrapers\\": "src/Scrapers/",
+            "App\\Crawlers\\": "src/automation/"
         }
     },
     "license": "Admin",
