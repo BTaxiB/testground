@@ -12,7 +12,7 @@ abstract class AbstractScraperCommand extends Driver
 {
    public function __construct(Driver $driver)
    {
-      $this->driver = $driver;
+      $this->driver = $driver->chromeDriver;
    }
 
    public function execute()
