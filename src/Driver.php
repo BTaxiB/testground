@@ -5,26 +5,24 @@ namespace App;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use App\Models\Database;
 
-final class Driver
+abstract class Driver
 {
-    const HOST = 'http://localhost:4444/wd/hub';
-    public RemoteWebDriver $chromeDriver;
+    private const DEFAULT_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36';
+    private const DEFAULT_RESOLUTION = '1920,1080';
+    protected RemoteWebDriver $chromeDriver;
 
-    public function __construct()
-    {
-        $this->chromeDriver = $this->chromeDriver();
-    }
-
+    /**
+     * @return void
+     */
     protected function chromeDriver()
     {
         $options = new ChromeOptions();
 
         $options->addArguments([
-            '--window-size=1920,1080',
+            '--window-size=' . self::DEFAULT_RESOLUTION,
             // '--incognito',
-            '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+            '--user-agent=' . self::DEFAULT_USER_AGENT,
             // '--user-data-dir=C:\Users\Miljan\AppData\Local\Google\Chrome\User',
             // '--headless',
         ]);
@@ -35,6 +33,6 @@ final class Driver
         $capabilities->setCapability('-enablePassThrough', 'false');
         $capabilities->setCapability(ChromeOptions::CAPABILITY, $options);
 
-        return RemoteWebDriver::create(self::HOST, $capabilities);
+        $this->chromeDriver = RemoteWebDriver::create(desired_capabilities: $capabilities);
     }
 }

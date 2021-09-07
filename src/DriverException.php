@@ -2,11 +2,19 @@
 
 namespace App;
 
-final class DriverException extends \Exception
+use Exception;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+
+final class DriverException extends Exception
 {
-    public static function assertChromeDriverExists(Driver $driver)
+    /**
+     * @param RemoteWebDriver $driver
+     * @return void
+     * @throws DriverException
+     */
+    public static function assertChromeDriverExists(RemoteWebDriver $driver): void
     {
-        if ($driver->chromeDriver === null) {
+        if ($driver === null) {
             throw new self("ChromeDriver instance is not running");
         }
     }

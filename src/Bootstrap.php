@@ -14,14 +14,16 @@ date_default_timezone_set('Europe/London');
  */
 use App\Database\Database;
 use App\Database\DatabaseConfig;
+use App\Scrapers\TestScraperCommand;
 use Illuminate\Database\Capsule\Manager;
 
-$databaseManager = new Manager();
-
-$databaseConfig = new DatabaseConfig();
-$databaseConfig->setDatabaseName('projekat');
-$databaseConfig->setUsername('root');
-$databaseConfig->setPassword('');
-
-$database = new Database($databaseManager);
-$database->withConfig($databaseConfig)->connect();
+$test = new TestScraperCommand;
+//$databaseManager = new Manager();
+//
+//$databaseConfig = new DatabaseConfig();
+//$databaseConfig->setDatabaseName('projekat');
+//$databaseConfig->setUsername('root');
+//$databaseConfig->setPassword('');
+//
+//$database = new Database($databaseManager);
+//$database->withConfig($databaseConfig)->connect();
