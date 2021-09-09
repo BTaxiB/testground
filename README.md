@@ -1,6 +1,4 @@
-# testground
-Strictly for educational purposes!
-
+# Selenium Web Automation Setup
 # Install Composer dependencies
  - composer i
  - composer dumpautoload -o
