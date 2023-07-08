@@ -1,4 +1,4 @@
-# Selenium Web Automation Setup
+# INFO! Dockerized version README to be updated, information below is deprecated
 # Install Composer dependencies
  - composer i
  - composer dumpautoload -o
