@@ -30,7 +30,7 @@ services:
       - '8080:80'
     volumes:
       - ./:/var/www/html
-      - .docker/images/nginx/app.conf:/etc/nginx/conf.d/default.conf
+      - ./build/images/nginx/app.conf:/etc/nginx/conf.d/default.conf
     links:
       - php-fpm
     networks:
