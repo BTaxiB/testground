@@ -5,9 +5,8 @@ namespace App;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use App\Models\Database;
 
-final class Driver
+class Driver
 {
     const HOST = 'http://localhost:4444/wd/hub';
     public RemoteWebDriver $chromeDriver;

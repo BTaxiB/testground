@@ -10,9 +10,10 @@ final class DatabaseConfig
     private string $username;
     private string $password;
 
-    public function setDatabaseName(string $databaseName): void
+    public function setDatabaseName(string $databaseName): DatabaseConfig
     {
         $this->databaseName = $databaseName;
+        return $this;
     }
 
     public function getDatabaseName(): string
@@ -20,9 +21,10 @@ final class DatabaseConfig
         return $this->databaseName;
     }
 
-    public function setUsername(string $username): void
+    public function setUsername(string $username): DatabaseConfig
     {
         $this->username = $username;
+        return $this;
     }
 
     public function getUsername(): string
@@ -30,9 +32,10 @@ final class DatabaseConfig
         return $this->username;
     }
 
-    public function setPassword(string $password): void
+    public function setPassword(string $password): DatabaseConfig
     {
         $this->password = $password;
+        return $this;
     }
 
     public function getPassword(): string
