@@ -1,9 +1,8 @@
 SHELL := /bin/bash
-SELENIUM_SERVER_LIB := selenium-server-4.10.0.jar
 SELENIUM_PORT := 3456
 TAG := v1.0
 
-start:
+start: # start infrastructure
 	docker compose up -d
 stop:
 	docker compose down
@@ -15,3 +14,6 @@ mysql:
 	docker exec -it auto-mysql-db-${TAG} bin/bash
 install:
 	composer i
+
+
+#https://tech.osteel.me/posts/how-to-build-and-distribute-beautiful-command-line-applications-with-php-and-composer
